@@ -1,39 +1,77 @@
 {
-    "PIZZAS": {
-        "TAMAÑO": [
+    "Pizzas": {
+        "Tamaños": [
             {
-                "PEQUEÑAS": [
-                    {
-                        "PEQUEÑA1": "5",
-                        "PEQUEÑA2": "6",
-                        "PEQUEÑA3": "7"
-                    }
-                ],
-                "MEDIANAS": [
-                    {
-                        "MEDIANA1": "9",
-                        "MEDIANA2": "10",
-                        "MEDIANA3": "11"
-                    }
-                ],
-                "GRANDES": [
-                    {
-                        "GRANDE1": "12",
-                        "GRANDE2": "14",
-                        "GRANDE3": "16"
-                    }
-                ]
+                "Pequeña": 
+                    [
+                        {
+                            "Miércoles": 5,
+                            "Resto de días": 6,
+                            "Fin de semana": 7
+                        }
+                    ]
+                ,
+                "Mediana": 
+                    [
+                        {
+                            "Miércoles": 9,
+                            "Resto de días": 10,
+                            "Fin de semana": 11
+                        }
+                    ]
+                ,
+                "Grande": 
+                    [
+                        {
+                            "Miércoles": 12,
+                            "Resto de días": 13,
+                            "Fin de semana": 14
+                        }
+                    ]
+                
             }
         ],
-        "INGREDIENTES": [
+        "Ingredientes": [
             {
-                "PEPERONI": "2",
-                "EXTRA QUESO": "3"
-            },
-            {
-                "CEBOLLA": "2",
-                "ATÚN": "3",
-                "CHAMPIÑONES": "1"
+                "Miércoles":
+                    [
+                        {
+                            "Cebolla": 2,
+                            "Champiñones": 1,
+                            "Anchoas": 2,
+                            "Jamón york": 3,
+                            "Piña": 2
+                        }
+                    ],
+                "Resto de días":
+                    [
+                        {
+                            "Peperoni": 2,
+                            "Extra de queso": 3,
+                            "Cebolla": 2,
+                            "Atún": 3,
+                            "Champiñones": 1,
+                            "Jamón york": 3,
+                            "Carne picada": 4,
+                            "Piña": 2
+                        }
+                    ],
+                "Fin de semana":
+                    [
+                        {
+                            "Peperoni": 2,
+                            "Extra de queso": 3,
+                            "Cebolla": 2,
+                            "Atún": 3,
+                            "Champiñones": 1,
+                            "Anchoas": 2,
+                            "Jamón york": 3,
+                            "Carne picada": 4,
+                            "Piña": 2,
+                            "Berenjena": 1,
+                            "Pimiento": 2
+                        }
+                    ]
             }
         ]
     }
