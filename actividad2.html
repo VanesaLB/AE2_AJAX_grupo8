@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Formulario de Pedido de Pizza</title>
-    <LINK REL=StyleSheet HREF="actividad2.css" TYPE="text/css" > 
-    
-    
-    
+    <title>AE2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="actividad2.css" type="text/css" > 
+    <script type="text/javascript" src="actividad2.js"></script>
 </head>
+
 <body>
  <fieldset>
-   <legend><h1><B>Pedido de Pizza</B></h1>  </legend>
+   <legend><h1><B>Pedido de Pizza</B></h1></legend>
     
     <form id="pedido-form" >
         <!--Le añadimos una imagen-->
@@ -29,17 +31,19 @@
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" required><br><br>
 
-        <label>Tamaño de la Pizza:</label><br>
-        <!--El tamaño de la pizza se selecciona con un input type radio para que sólo se pueda seleccionar una-->
-        <input type="radio" id="pequena" name="tamano" value="pequena" required>5€ <br>
+        <div id="tamanos"></div>
+
+        <!--<label>Tamaño de la Pizza:</label><br>
+        El tamaño de la pizza se selecciona con un input type radio para que sólo se pueda seleccionar una-->
+        <!-- <input type="radio" id="pequena" name="tamano" value="pequena" required>5€ <br>
         <label for="pequena">Pequeña</label><br>
         <input type="radio" id="mediana" name="tamano" value="mediana" required>10€ <br>
         <label for="mediana">Mediana</label><br>
         <input type="radio" id="grande" name="tamano" value="grande" required>15€ <br>
-        <label for="grande">Grande</label><br><br>
+        <label for="grande">Grande</label><br><br>-->
 
-        <label>Ingredientes:</label><br>
-        <!--El numero de ingredientes se selecciona con un input checkbox para poder seleccionar mas de uno-->
+        <!--<label>Ingredientes:</label><br>
+        El numero de ingredientes se selecciona con un input checkbox para poder seleccionar mas de uno
         <input type="checkbox" id="jamon" name="ingredientes[]" value="jamon">
         <label for="jamon">Jamón</label><br>
         <input type="checkbox" id="queso" name="ingredientes[]" value="queso">
@@ -47,14 +51,14 @@
         <input type="checkbox" id="champinones" name="ingredientes[]" value="champinones">
         <label for="champinones">Champiñones</label><br>
         <input type="checkbox" id="aceitunas" name="ingredientes[]" value="aceitunas">
-        <label for="aceitunas">Aceitunas</label><br><br>
-        <!-- Llamamos a la función a través de un input type button a través de el evento onclick-->
-        <input type="button" class="boton" value="Procesar Pedido" onclick="calcularPrecio()">
+        <label for="aceitunas">Aceitunas</label><br><br>-->
+        <!-- Llamamos a la función a través de un input type button a través de el evento onclick
+        <input type="button" class="boton" value="Procesar Pedido" onclick="calcularPrecio()">-->
     </form>
  </fieldset>
      <!-- Creo un div "resultado" para poder introducir el precioTotal-->
     <div id="resultado"></div>
      <!-- Llamada al script -->
-    <script src="actividad2.js"></script>
+    
 </body>
 </html>
