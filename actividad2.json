@@ -1,5 +1,5 @@
 {
-    "pizza": {
+    
       "tamanos": [
         { 
           "id": "pequena", 
@@ -44,6 +44,6 @@
           "precio": 1
         }
       ]
-    }
+    
     
 }
