@@ -13,7 +13,7 @@
  <fieldset>
    <legend><h1><B>Pedido de Pizza</B></h1></legend>
     
-    <form id="pedido-form" >
+    <form id="pedido-form" action="GET">
         <!--Le añadimos una imagen-->
         <img src="images/pizza_redimensionada.png"/>
 
@@ -32,6 +32,7 @@
         <input type="text" id="email" name="email" required><br><br>
 
         <div id="tamanos"></div>
+        <div id="ingredientes"></div>
 
         <!--<label>Tamaño de la Pizza:</label><br>
         El tamaño de la pizza se selecciona con un input type radio para que sólo se pueda seleccionar una-->
@@ -52,8 +53,8 @@
         <label for="champinones">Champiñones</label><br>
         <input type="checkbox" id="aceitunas" name="ingredientes[]" value="aceitunas">
         <label for="aceitunas">Aceitunas</label><br><br>-->
-        <!-- Llamamos a la función a través de un input type button a través de el evento onclick
-        <input type="button" class="boton" value="Procesar Pedido" onclick="calcularPrecio()">-->
+        <!-- Llamamos a la función a través de un input type button a través de el evento onclick-->
+        <input type="button" class="boton" value="Procesar Pedido" onclick="calcularPrecio()">
     </form>
  </fieldset>
      <!-- Creo un div "resultado" para poder introducir el precioTotal-->
