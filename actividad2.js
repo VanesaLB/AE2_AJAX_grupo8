@@ -153,12 +153,19 @@ window.addEventListener("click", function () {
 //Llamada a AJAX para pedir precios y sumar lo seleccionado
 function calcularPrecio(){
     let resultado = 0;
-    let radios = document.getElementsByName("tamano");
-    for(radio of radios){
+    let tamano = document.getElementsByName("tamano");
+    let ingredientes = document.getElementsByName("ingredientes");
+    for(tamano of tamanos){
         if(tamano.checked){
-            continue
-        }       
+            resultado += tamano.value;
+        }
     }
+    for(ingrediente of ingredientes){
+        if(ingrediente.checked){
+            resultado += ingredientes.value;
+        }
+    }
+    return resultado;
 
 }
 
