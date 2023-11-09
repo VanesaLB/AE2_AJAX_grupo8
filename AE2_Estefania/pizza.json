@@ -9,7 +9,7 @@
       { "id": "queso", "nombre": "Queso", "precio": 1 },
       { "id": "champinones", "nombre": "Champiñones", "precio": 1 },
       { "id": "aceitunas", "nombre": "Aceitunas", "precio": 1 },
-      { "id": "pimiento", "nombre": "pimiento", "precio": 1 }
+      { "id": "pimientos", "nombre": "pimientos", "precio": 1 }
     ]
   }
   
