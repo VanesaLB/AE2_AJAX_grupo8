@@ -42,7 +42,7 @@ function cargarPagina() {
     });
 }*/
 
-
+/*
 window.addEventListener("load", function () {
     // Realizo una solicitud AJAX para obtener los datos del servidor de la forma que nos ha enseñado felix no lo consigo
     const xmlhttp = new XMLHttpRequest();
@@ -56,39 +56,38 @@ window.addEventListener("load", function () {
     };
     xmlhttp.send();
 });
-
+*/
 //Intento VANESA
-/*
-const URL_DESTINO = "http://localhost:5501/AE2_AJAX_GRUPO8/" //http://127.0.0.1:5501/
+
+const URL_DESTINO = "http://localhost:5501/AE2_AJAX_grupo8/" //http://127.0.0.1:5501/
 const RECURSO = "actividad2.json"
 
-    function cargarDatosDesdeJSON() {
+    function cargarDatosDesdeJSON(url, callback) {
 
         let xmlHttp = new XMLHttpRequest()
 
         xmlHttp.onreadystatechange = function () {
-            console.log(this.readyState)
             if (this.readyState == 4) {
                 if (this.status == 200) {
-                    cargarPagina(this.responseText);//Obtenemos el valor en texto
+                    callback(this.responseText);//Obtenemos el valor en texto
                 } else {
                     alert("Error al cargar los datos desde el servidor.")
                 }
             }
         }
 
-        xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
+        xmlHttp.open('GET', url, true)
         xmlHttp.send(null)
     }
 
     function cargarPagina() {
-        cargarDatosDesdeJSON(URL_DESTINO, function (data) {
+        cargarDatosDesdeJSON(`${URL_DESTINO}${RECURSO}`, function (data) {
             const datos = JSON.parse(data);
             cargarTamanos(datos.tamanos);
             cargarIngredientes(datos.ingredientes);
         });
     }
-*/
+
 
 // Función para cargar tamaños dinámicamente
 function cargarTamanos(tamano) {
@@ -133,6 +132,11 @@ function cargarIngredientes(ingredientes) {
     ingredientesDiv.appendChild(document.createElement("br"));//He añadido este br
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    cargarPagina();
+});
+
+/*
 //REQUERIMIENTO 2
 //Cuando haga click se calcula el precio y se muestra
 window.addEventListener("click", function () {
@@ -168,7 +172,7 @@ function calcularPrecio(){
     return resultado;
 
 }
-
+*/
 /*
 window.onload = function () {
     cargarPagina();
