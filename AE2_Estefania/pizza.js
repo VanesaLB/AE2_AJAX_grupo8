@@ -1,31 +1,4 @@
-/*
-const URL_DESTINO = "http://localhost:5500/AE2_AJAX/"; 
-const RECURSO = "pizza.json"; 
 
-function cargarDatosDesdeJSON(url, callback) {
-    let xmlHttp = new XMLHttpRequest();
-
-    xmlHttp.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                callback(this.responseText);
-            } else {
-                alert("Error al cargar los datos desde el servidor.");
-            }
-        }
-    };
-
-    xmlHttp.open('GET', url, true);
-    xmlHttp.send(null);
-}
-
-function cargarPagina() {
-    cargarDatosDesdeJSON(URL_DESTINO + RECURSO, function (data) {
-        const datos = JSON.parse(data);
-        cargarTamanos(datos.tamanos);
-        cargarIngredientes(datos.ingredientes);
-    });
-}*/
 window.addEventListener("load", function () {
     // Realizo una solicitud AJAX para obtener los datos del servidor de la forma que nos ha enseñado felix no lo consigo
     const xmlhttp = new XMLHttpRequest();
@@ -39,19 +12,24 @@ window.addEventListener("load", function () {
     };
     xmlhttp.send();
 });
+// Función para cargar tamaños  dinámicamente
 function cargarTamanos(tamano) {
+    // Obtengo la referencia al elemento HTML con el ID "tamanos-pizza". Aqui se cargaran los tamaños .
     const tamanosDiv = document.getElementById("tamanos-pizza");
+    //Recorre cada tamaño del array.
     tamano.forEach((tamano) => {
+     //Dentro del bucle creo un elemento input de tipo radio para cada tamaño.
         const radio = document.createElement("input");
         radio.type = "radio";
-        radio.name = "tamano";
-        radio.value = tamano.precio;
+        radio.name = "tamano";//Asigno este nombre al radio.
+        radio.value = tamano.precio;// Establezco el valor del radio con el precio de cada tamaño.
         radio.required = true;
-
+     // creo un label para asociarlo con el radio y proporcionar una descripcion con el id de cada tamaño en json.
         const label = document.createElement("label");
         label.setAttribute("for", tamano.id);
+     // y le digo que contenga el texto del nombre y precio del tamaño
         label.textContent = `${tamano.nombre} - ${tamano.precio}€`;
-
+     // Agrego  el radio y la etiqueta  label al contenedor lo separo con br .
         tamanosDiv.appendChild(radio);
         tamanosDiv.appendChild(label);
         tamanosDiv.appendChild(document.createElement("br"));
@@ -59,20 +37,25 @@ function cargarTamanos(tamano) {
 }
 // Función para cargar ingredientes dinámicamente
 function cargarIngredientes(ingredientes) {
+   // Obtiene la referencia al elemento HTML con el ID "ingredientes-pizza". Este es
+   //  un contenedor donde se cargarán los ingredientes de la pizza.
     const ingredientesDiv = document.getElementById("ingredientes-pizza");
+    // Recorre cada elemento del array ingredientes.
     ingredientes.forEach((ingrediente) => {
+     //Dentro del bucle, se crea un elemento input de tipo checkbox para cada ingrediente.
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.name = "ingredientes[]";
-        checkbox.value = ingrediente.precio;
-
+        checkbox.name = "ingredientes[]";//Asigno un nombre al checkbox 
+        checkbox.value = ingrediente.precio;// Establezco el valor del checkbox como el precio del ingrediente.
+     //A continuación, creo un elemento label para asociarlo con el checkbox y proporcionar una descripción con el id 
+     //del ingrediente del json
         const label = document.createElement("label");
         label.setAttribute("for", ingrediente.id);
-        label.textContent = `${ingrediente.nombre} - ${ingrediente.precio}€`;
+        label.textContent = `${ingrediente.nombre} - ${ingrediente.precio}€`;// Establezco el texto de la etiqueta con el nombre y precio del ingrediente.
 
-        ingredientesDiv.appendChild(checkbox);
-        ingredientesDiv.appendChild(label);
-        ingredientesDiv.appendChild(document.createElement("br"));
+        ingredientesDiv.appendChild(checkbox);//Agrego el checkbox al contenedor .
+        ingredientesDiv.appendChild(label);//Agrego la etiqueta al contenedor.
+        ingredientesDiv.appendChild(document.createElement("br"));// Lo separo mediante etiqueta br.
     });
 }
 // Función para calcular el precio del pedido
