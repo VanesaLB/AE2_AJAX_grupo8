@@ -3,7 +3,8 @@
 <head>
     <title>Formulario de Pedido de Pizza</title>
     <LINK REL=StyleSheet HREF="pizza.css" TYPE="text/css" > 
-    
+    <script type="text/javascript" src="pizza.js"></script>
+
     
     
 </head>
@@ -59,12 +60,11 @@
         </div> 
         <input type="button" id="recargarDatosForm" class="boton" value="Recargar" >
         <!-- Llamamos a la función a través de un input type button a través de el evento onclick-->
-        <input type="button" id="procesarPedidoFinal" class="boton" value="procesarPedido" onclick = "calcularPrecio()">
+        <input type="button" id="procesarPedidoFinal" class="boton" value="procesarPedido">
     </form>
  </fieldset>
      <!-- Creo un div "resultado" para poder introducir el precioTotal-->
     <div id="precioResultado"></div>
-     <!-- Llamada al script -->
-    <script src="pizza.js"></script>
+   
 </body>
 </html>

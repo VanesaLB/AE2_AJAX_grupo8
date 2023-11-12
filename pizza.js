@@ -104,10 +104,14 @@ window.onload = function() {
 
         tamañoPizza.innerHTML = ""
         ingredientesPizza.innerHTML = ""
+        precioResultado.innerHTML = ""
         procesarRespuesta(xmlHttp.responseText)
+   
+
+   
     }
     
-    
+    procesarPedidoFinal.addEventListener("click", calcularPrecio)
 
         
         
@@ -122,20 +126,19 @@ function calcularPrecio() {
    
     
     let bases = document.getElementsByName("tamaño")
-    let preciobasetotal
+    let preciobasetotal = 0
     for (let cadabase of bases) {
     
     if (cadabase.checked) {
 
-        baseparseada = parseFloat(cadabase.value)
-        preciobasetotal = 0
+        baseparseada = parseFloat(cadabase.value)  
         preciobasetotal = baseparseada
     }
    
     }
     let ingredientes = document.getElementsByName("ingrediente")
     
-    let precioingredientestotal
+    let precioingredientestotal = 0
     for (let cadaingrediente of ingredientes) {
     
     if (cadaingrediente.checked) {
@@ -143,7 +146,6 @@ function calcularPrecio() {
         
 
         ingredienteparseado = parseFloat(cadaingrediente.value)
-        precioingredientestotal = 0 
         precioingredientestotal += ingredienteparseado
         
     }
@@ -151,10 +153,11 @@ function calcularPrecio() {
     }
     let precioFinalTotal;
     precioFinalTotal = preciobasetotal + precioingredientestotal
-    let textoPrecioFinal = `El precio final del pedido es de : ${precioFinalTotal} €`
+    let textoPrecioFinal = "El precio final del pedido es de : " + precioFinalTotal + " €"
     
-    document.getElementById("precioResultado").innerHTML = textoPrecioFinal
+    precioResultado.innerHTML = textoPrecioFinal
 }
+
 
 
 
