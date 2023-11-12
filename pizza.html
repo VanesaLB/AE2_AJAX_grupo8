@@ -35,40 +35,23 @@
             <input type="text" id="email" name="email" required><br><br>
             <p>Tamaño:</p>
             <div id="tamañoPizza">
-                <!--
-         <label>Tamaño de la Pizza:</label><br>
-         El tamaño de la pizza se selecciona con un input type radio para que sólo se pueda seleccionar una
-         <input type="radio" id="pequena" name="tamano" value="pequena" required>5€ <br>
-         <label for="pequena">Pequeña</label><br>
-         <input type="radio" id="mediana" name="tamano" value="mediana" required>10€ <br>
-         <label for="mediana">Mediana</label><br>
-         <input type="radio" id="grande" name="tamano" value="grande" required>15€ <br>
-         <label for="grande">Grande</label><br><br>-->
+                <!-- Aquí a través de js traeremos dinámicamente el radio buton necesario -->
             </div>
             <p>Ingredientes:</p>
             <div id="ingredientesPizza"></div>
-
-            <!--
-            <label></label><br>-->
-            <!--El numero de ingredientes se selecciona con un input checkbox para poder seleccionar mas de uno-->
-            <!--<input type="checkbox" id="" name="ingredientes[]" value="">
-         <label for=""></label><br>-->
-            <!--
-         <input type="checkbox" id="queso" name="ingredientes[]" value="queso">
-         <label for="queso">Queso</label><br>
-         <input type="checkbox" id="champinones" name="ingredientes[]" value="champinones">
-         <label for="champinones">Champiñones</label><br>
-         <input type="checkbox" id="aceitunas" name="ingredientes[]" value="aceitunas">
-         <label for="aceitunas">Aceitunas</label><br><br>
-        -->
+            <!-- Aquí a través de js traeremos dinámicamente los checkboxs necesarios -->
             </div>
+            <!-- Por js a este button le asignaremos un evento onclick para ejecutar una funcion
+            que recarga el formulario para que le introduzcamos de nuevo los datos -->
             <input type="button" id="recargarDatosForm" class="boton" value="Recargar">
-            <!-- Llamamos a la función a través de un input type button a través de el evento onclick-->
+            <!-- Por js a este button le asignaremos un evento onclick para ejecutar una funcion
+            que procese las opciones que hemos marcado en el formulario y nos devuelva el precio final 
+            del Pedido -->
             <input type="button" id="procesarPedidoFinal" class="boton" value="procesarPedido">
         </form>
     </fieldset>
-    <!-- Creo un div "resultado" para poder introducir el precioTotal-->
-    <div id="precioResultado"></div>
+    <!-- En el div precioResultado pondremos el precio final del pedido-->
+    <div id="precioDelPedido"></div>
 
 </body>
 

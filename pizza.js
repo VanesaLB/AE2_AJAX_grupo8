@@ -1,30 +1,6 @@
 
-
-const URL_DESTINO = "http://localhost:5500/"
-const RECURSO = "pizza.json"
-/*window.addEventListener("load", function () {
- 
-
-    let xmlHttp = new XMLHttpRequest()
-
-    xmlHttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
-            } else {
-                alert("ZASCA!")
-            }
-        }
-    }
-
-    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-    xmlHttp.send(null)
-}
-)
-*/
 function procesarRespuesta(jsonDoc) {
     //Convertimos un texto a un objeto JSON
-
     objetoJson = JSON.parse(jsonDoc)
     //Podemos hacer lo contrario con "JSON.stringify(obj)"ç
 
@@ -81,53 +57,6 @@ function procesarRespuesta(jsonDoc) {
 
 }
 
-
-window.onload = function () {
-
-    let xmlHttp = new XMLHttpRequest()
-
-    xmlHttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
-            } else {
-                alert("ZASCA!")
-            }
-        }
-    }
-
-    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-    xmlHttp.send(null)
-
-
-    recargarDatosForm.onclick = function () {
-
-        tamañoPizza.innerHTML = ""
-        ingredientesPizza.innerHTML = ""
-        precioResultado.innerHTML = ""
-        procesarRespuesta(xmlHttp.responseText)
-
-
-
-    }
-
-    procesarPedidoFinal.addEventListener("click", function () {
-
-
-
-        if (valicacion())
-            calcularPrecio()
-
-
-    })
-
-
-
-
-
-}
-
-
 function calcularPrecio() {
 
 
@@ -163,11 +92,8 @@ function calcularPrecio() {
     precioFinalTotal = preciobasetotal + precioingredientestotal
     let textoPrecioFinal = "El precio final del pedido es de : " + precioFinalTotal + " €"
 
-    precioResultado.innerHTML = textoPrecioFinal
+    precioDelPedido.innerHTML = textoPrecioFinal
 }
-
-
-
 
 
 function valicacion() {
@@ -229,15 +155,77 @@ function valicacion() {
 
     }
     return true
+}
 
 
+const URL_DESTINO = "http://localhost:5500/"
+const RECURSO = "pizza.json"
+
+window.onload = function () {
+
+    let xmlHttp = new XMLHttpRequest()
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
+            } else {
+                alert("ZASCA!")
+            }
+        }
+    }
+
+    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
+    xmlHttp.send(null)
 
 
+    recargarDatosForm.onclick = function () {
+
+        tamañoPizza.innerHTML = ""
+        ingredientesPizza.innerHTML = ""
+        precioDelPedido.innerHTML = ""
+        procesarRespuesta(xmlHttp.responseText)
+    }
+
+    procesarPedidoFinal.addEventListener("click", function () {
+
+        if (valicacion())
+            calcularPrecio()
+    })
 
 }
 
 
 
+
+
+
+
+
+
+
+/*
+Otra manera de hacer la petición XMLHttpRequest :
+window.addEventListener("load", function () {
+ 
+
+    let xmlHttp = new XMLHttpRequest()
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
+            } else {
+                alert("ZASCA!")
+            }
+        }
+    }
+
+    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
+    xmlHttp.send(null)
+}
+)
+*/
 
 
 
