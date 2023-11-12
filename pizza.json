@@ -1,0 +1,45 @@
+{
+  "PIZZAS":{
+      "TAMAÑOS" : [
+          {
+              "tamaño" : "pequeño",
+              "precio" : 5
+          },
+           {
+              "tamaño" : "mediano",
+              "precio" : 10
+          },
+          {
+              "tamaño" : "grande",
+              "precio" : 15
+          }
+      ],
+
+      "INGREDIENTES" : [
+          {
+              "nombre" : "jamon",
+              "precio" : 2
+          },
+           {
+              "nombre" : "queso",
+              "precio" : 1
+          },
+          {
+              "nombre"  : "champiñones",
+              "precio" : 1
+          },
+          {
+              "nombre" : "aceitunas",
+              "precio" : 1
+          },
+          {
+              "nombre" : "pimientos",
+              "precio" : 1
+
+
+          }
+          
+          
+      ]
+  }
+}  

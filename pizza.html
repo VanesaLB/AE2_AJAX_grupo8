@@ -29,7 +29,7 @@
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" required><br><br>
         <p>Tamaño:</p>
-        <div id="tamanos-pizza">
+        <div id="tamañoPizza">
             <!--
          <label>Tamaño de la Pizza:</label><br>
          El tamaño de la pizza se selecciona con un input type radio para que sólo se pueda seleccionar una
@@ -41,7 +41,7 @@
          <label for="grande">Grande</label><br><br>-->
         </div>
         <p>Ingredientes:</p>
-        <div id="ingredientes-pizza"></div>
+        <div id="ingredientesPizza"></div>
         
          <!--
             <label></label><br>-->
@@ -57,12 +57,13 @@
          <label for="aceitunas">Aceitunas</label><br><br>
         -->
         </div> 
+        <input type="button" id="recargarDatosForm" class="boton" value="Recargar" >
         <!-- Llamamos a la función a través de un input type button a través de el evento onclick-->
-        <input type="button" class="boton" value="Procesar Pedido" onclick="calcularPrecio()">
+        <input type="button" id="procesarPedidoFinal" class="boton" value="procesarPedido" onclick = "calcularPrecio()">
     </form>
  </fieldset>
      <!-- Creo un div "resultado" para poder introducir el precioTotal-->
-    <div id="resultado"></div>
+    <div id="precioResultado"></div>
      <!-- Llamada al script -->
     <script src="pizza.js"></script>
 </body>
