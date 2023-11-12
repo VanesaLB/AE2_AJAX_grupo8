@@ -65,7 +65,7 @@ function procesarRespuesta(jsonDoc) {
         opcioningrediente.type = "checkbox"
         opcioningrediente.id = cadaingrediente.nombre
         opcioningrediente.name = "ingrediente"
-        opcioningrediente.value = cadaingrediente.value
+        opcioningrediente.value = cadaingrediente.precio
     
         ingredientesPizza.appendChild(opcioningrediente)
     
@@ -123,26 +123,35 @@ function calcularPrecio() {
     
     let bases = document.getElementsByName("tamaño")
     let preciobasetotal
-    for (let i = 0; i < bases; i++) {
+    for (let cadabase of bases) {
     
-    if (bases[i].checked) {
+    if (cadabase.checked) {
 
-        preciobasetotal = bases[i].value
+        baseparseada = parseFloat(cadabase.value)
+        preciobasetotal = 0
+        preciobasetotal = baseparseada
     }
+   
     }
     let ingredientes = document.getElementsByName("ingrediente")
+    
     let precioingredientestotal
+    for (let cadaingrediente of ingredientes) {
     
-    for (let i = 0; i < ingredientes; i++) {
-    
-    if (ingredientes[i].checked) {
+    if (cadaingrediente.checked) {
 
-        precioingredientestotal += ingredientes[i].value
+        
+
+        ingredienteparseado = parseFloat(cadaingrediente.value)
+        precioingredientestotal = 0 
+        precioingredientestotal += ingredienteparseado
+        
     }
+    
     }
     let precioFinalTotal;
     precioFinalTotal = preciobasetotal + precioingredientestotal
-    let textoPrecioFinal = "El precio final del pedido es de : " + precioFinalTotal + "$"
+    let textoPrecioFinal = `El precio final del pedido es de : ${precioFinalTotal} €`
     
     document.getElementById("precioResultado").innerHTML = textoPrecioFinal
 }
