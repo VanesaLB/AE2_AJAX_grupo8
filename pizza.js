@@ -76,7 +76,7 @@ function procesarRespuesta(jsonDoc) {
         ingredientesPizza.appendChild(opcioningrediente)
 
         var labelingrediente = document.createElement("label")
-        var txtlabelingrediente = document.createTextNode(cadaingrediente.nombre + " - precio : " + cadaingrediente.precio + "$")
+        var txtlabelingrediente = document.createTextNode(cadaingrediente.nombre + " - precio : " + cadaingrediente.precio + "€")
         labelingrediente.appendChild(txtlabelingrediente)
         ingredientesPizza.appendChild(labelingrediente)
 
