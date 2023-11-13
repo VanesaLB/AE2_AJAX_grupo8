@@ -312,34 +312,3 @@ window.onload = function () {
 
 
 
-
-
-/*
-Otra manera de hacer la petición XMLHttpRequest :
-window.addEventListener("load", function () {
- 
-
-    let xmlHttp = new XMLHttpRequest()
-
-    xmlHttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                procesarRespuesta(this.responseText)//Obtenemos el valor en texto
-            } else {
-                alert("ZASCA!")
-            }
-        }
-    }
-
-    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-    xmlHttp.send(null)
-}
-)
-*/
-
-
-
-
-
-
-
