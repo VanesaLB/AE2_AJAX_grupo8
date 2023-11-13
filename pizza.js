@@ -42,7 +42,7 @@ function procesarRespuesta(jsonDoc) {
         tamañoPizza.appendChild(opciontamaño)
 
         var labeltamaño = document.createElement("label")
-        var txtlabeltamaño = document.createTextNode(cadatamaño.tamaño + " - precio : " + cadatamaño.precio + "$")
+        var txtlabeltamaño = document.createTextNode(cadatamaño.tamaño + " - precio : " + cadatamaño.precio + "€")
 
         labeltamaño.appendChild(txtlabeltamaño)
         tamañoPizza.appendChild(labeltamaño)
